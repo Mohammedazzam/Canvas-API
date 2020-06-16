@@ -1,33 +1,32 @@
 //select the canvas Element
 let theCanvas = document.getElementById('our-canvas'),
-
     //select context type
     theContext = theCanvas.getContext('2d'),
-
     //The Gradient
-    theGradient = theContext.createLinearGradient(0, 0, 0, 0);
-
+    theGradient = theContext.createLinearGradient(0, 0, 200, 0);
 
 //Add Color Stops
 theGradient.addColorStop(0, "red");
 theGradient.addColorStop(1, "blue");
 
+//control Line Width
+// theContext.lineWidth = 10
 
-//Select he Image
-
-let theImage = document.getElementById('our-image');
-
-//create The Pattern
-
-
-// let thePatern = theContext.createPattern(theImage, 'no-repeat')
-// let thePatern = theContext.createPattern(theImage, 'repeat')
-let thePatern = theContext.createPattern(theImage, 'repeat-x');
-
-//chose Fill style
-theContext.fillStyly = thePatern;
+//chose Stroke style
+theContext.strokeStyle = theGradient;
 
 //Draw Rectangle
-// theContext.fillRect(5, 0, 200, 150)
-// theContext.fillRect(0, 0, 300, 150);
-theContext.fillRect(0, 0, theCanvas.width, theCanvas.height);
+theContext.strokeRect(20, 20, 200, 100)
+
+//set Font
+theContext.font = "32px Tahoma";
+
+
+//create Filled Text    
+
+// theContext.fillStyle = theGradient
+// theContext.fillText('Hello  canvas', 50, 50)
+
+
+theContext.strokeStyle = theGradient
+theContext.strokeText('Hello  canvas', 50, 50)
