@@ -7,21 +7,25 @@ let theCanvas = document.getElementById('our-canvas'),
 theContext.beginPath();
 
 //Select The Start Positionof The Path
-theContext.moveTo(0, 0); //(0,0) (650,0)
+theContext.moveTo(100, 100);
 
 //Select The Path Points
-theContext.lineTo(325, 170); //(200,100)(200,20)
+theContext.lineTo(100, 300); //600 400
+theContext.lineTo(300, 300);
+theContext.lineTo(400, 200);
+// theContext.lineTo(100, 100);
 
+//closing the path
+theContext.closePath();
 
-//Select The Start Positionof The Path
-theContext.moveTo(650, 0);
-
-//Select The Path Points
-theContext.lineTo(325, 170);
-
-//Adjust Style and Line Width
-theContext.strokeStyle = "#00f";
-theContext.lineWidth = 5;
+//Border styling
+theContext.lineWidth = 8;
+theContext.strokeStyle = "red"
 
 //Draw The Path
-theContext.stroke()
+theContext.stroke();
+
+//Fill The Shape
+
+theContext.fillStyle = "green"
+theContext.fill();
