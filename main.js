@@ -3,29 +3,22 @@ let theCanvas = document.getElementById('our-canvas'),
     //select context type
     theContext = theCanvas.getContext('2d')
 
+//Full Path
+theCircle = 2 * Math.PI;
 //Begin The Path
 theContext.beginPath();
-
-//Select The Start Positionof The Path
-theContext.moveTo(100, 100);
-
-//Select The Path Points
-theContext.lineTo(100, 300); //600 400
-theContext.lineTo(300, 300);
-theContext.lineTo(400, 200);
-// theContext.lineTo(100, 100);
-
-//closing the path
-theContext.closePath();
 
 //Border styling
 theContext.lineWidth = 8;
 theContext.strokeStyle = "red"
 
+// theContext.arc(300, 200, 150, 0, 5.28319) //6.28319 , true
+// theContext.arc(300, 200, 150, 0, 1 * Math.PI)
+// theContext.arc(300, 200, 150, 0, 1.5 * Math.PI)
+// theContext.arc(300, 200, 150, 0, 2 * Math.PI)
+// theContext.arc(300, 200, 150, 0, 0.5 * Math.PI)
+theContext.arc(300, 200, 150, 0, 0.7 * theCircle)
+
+
 //Draw The Path
 theContext.stroke();
-
-//Fill The Shape
-
-theContext.fillStyle = "green"
-theContext.fill();
