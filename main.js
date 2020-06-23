@@ -3,19 +3,32 @@ let theCanvas = document.getElementById('our-canvas'),
     //select context type
     theContext = theCanvas.getContext('2d');
 
-theContext.fillStyle = "red";
-theContext.fillRect(50, 50, 200, 100);
+theContext.globalAlpha = 0.1
+
+theContext.strokeStyle = '#aaa';
+theContext.lineWidth = 5;
+theContext.moveTo(300, 0)
+theContext.lineTo(300, 400);
+theContext.stroke();
+
+theContext.direction = 'rtl'
 
 
-//Save The Clean State WithOut Any Scale Or Anything
-theContext.save();
-theContext.scale(2, 2); //2 2 
-theContext.fillStyle = "green";
-theContext.fillRect(50, 50, 200, 100);
+theContext.font = '30px Tahoma';
+theContext.fillStyle = '#f00';
 
-//Restore The Clean State WithOut Any Scale Or Anything
-theContext.restore();
 
-theContext.translate(50, 50)
-theContext.fillStyle = "blue";
-theContext.fillRect(70, 70, 200, 100);
+theContext.textAlign = 'start'
+theContext.fillText("Start", 300, 50)
+
+theContext.textAlign = 'end'
+theContext.fillText("End", 300, 100)
+
+theContext.textAlign = 'center'
+theContext.fillText("Center", 300, 150)
+
+theContext.textAlign = 'left'
+theContext.fillText("Left", 300, 200)
+
+theContext.textAlign = 'right'
+theContext.fillText("Right", 300, 250)
